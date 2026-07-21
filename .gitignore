@@ -8,3 +8,4 @@ build/
 *.toc
 *.xdv
 *.pdf
+.ptd
