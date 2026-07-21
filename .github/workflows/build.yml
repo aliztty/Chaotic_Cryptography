@@ -14,11 +14,11 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: solution-persian.tex
+          root_file: Crypto_Thesis.tex
           latexmk_use_xelatex: true
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Compiled-PDF
-          path: solution-persian.pdf
+          path: Crypto_Thesis.pdf
