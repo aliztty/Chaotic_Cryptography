@@ -1,0 +1,24 @@
+name: Build LaTeX Document
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: solution-persian.tex
+          latexmk_use_xelatex: true
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compiled-PDF
+          path: solution-persian.pdf
